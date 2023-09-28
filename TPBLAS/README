@@ -1,0 +1,75 @@
+BLAS (Basic Linear Algebra Subprograms) are a set of low-level routines for performing common linear
+algebra operations, such as matrix-vector multiplication and dot products.
+
+BLAS1, BLAS2, and BLAS3 refer to three different levels of BLAS routines, with increasing levels of 
+computational complexity.
+
+BLAS1: Level 1 BLAS routines operate on vectors and perform simple operations, such as vector 
+addition, subtraction, and scaling, and are typically used for vector-vector operations.
+
+BLAS2: Level 2 BLAS routines operate on matrices and vectors and typically perform matrix-vector 
+multiplication, solving triangular systems, and computing matrix-vector products for dense matrices.
+
+BLAS3: Level 3 BLAS routines operate on matrices and matrices and perform matrix-matrix 
+multiplication, such as the classical matrix multiplication and blocked matrix multiplication.
+
+In general, as the level of BLAS increases, the computational complexity of the operations also 
+increases, which may lead to differences in performance. BLAS3 operations typically involve the 
+largest amount of computation and memory access, and may therefore be the slowest. However, the 
+performance of BLAS routines can depend on various factors, such as the size of the matrices and the 
+hardware and software implementation, so the actual performance may vary depending on the specific 
+use case.
+
+
+
+The performance of BLAS operations can depend on many factors, including the specific implementation
+and the hardware being used. However, in general, the performance of BLAS operations can be affected
+by the precision of the data type being used. Here are some general considerations for the
+performance of different data types for each level of BLAS:
+
+BLAS1:
+
+For level 1 BLAS operations, the performance difference between float and double is usually not 
+significant, since the operations are relatively simple and the difference in precision does not 
+affect the performance much.
+For complex float and complex double, the performance difference may be more noticeable, since complex
+operations typically require more computational resources. However, the performance difference 
+between these two types may depend on the specific operation being performed and the hardware being 
+used.
+
+
+BLAS2:
+
+For level 2 BLAS operations, the performance difference between float and double may be noticeable 
+for larger matrices, since the operations involve more computation and memory access. Double 
+precision is generally slower than single precision, but the difference in performance may depend 
+on the specific implementation and the hardware being used.
+For complex float and complex double, the performance difference may be more significant, especially 
+for larger matrices. Complex operations are generally more computationally expensive than real 
+operations, so the performance difference between these two types may be more noticeable than for
+real types.
+
+
+BLAS3:
+
+For level 3 BLAS operations, the performance difference between float and double is usually 
+significant, since the operations involve a large amount of computation and memory access. Double 
+precision is generally slower than single precision, but the difference in performance may depend on
+the specific implementation and the hardware being used.
+For complex float and complex double, the performance difference may be even more significant than 
+for real types, since complex operations are generally more computationally expensive. However, the 
+performance difference between these two types may depend on the specific operation being performed 
+and the hardware being used.
+In general, the performance of BLAS operations can vary widely depending on the specific use case 
+and the hardware being used. It is often a good idea to benchmark different data types and BLAS 
+implementations for a specific problem to determine the best choice for performance.
+
+
+
+
+long story short :
+
+BLAS1 -> BLAS2 -> BLAS3
+more permormant -> least performant
+
+and the difference between performances of double and float is more significant as BLAS level increases. 
